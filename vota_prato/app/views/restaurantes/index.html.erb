@@ -10,6 +10,7 @@
     <p>
       <%= link_to 'Detalhe', action: 'show', id: restaurante%>
       <%= link_to 'Deletar', {action: 'destroy', id: restaurante}, {method: "delete"} %>
+      <%= link_to 'Editar', action: 'edit', id: restaurante %>
     </p>
   </tr>
 <% end %>
