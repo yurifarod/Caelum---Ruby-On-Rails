@@ -1,0 +1,15 @@
+<h1>Clientes</h1>
+<p>
+<%= link_to 'Novo', action: 'new' %>
+</p>
+<% @clientes.each do |cliente| %>
+  <tr>
+    <h1><%= cliente.nome %> </h1>
+    <p><%= cliente.idade %>, idade</p>
+    <p>
+      <%= link_to 'Detalhe', action: 'show', id: cliente%>
+      <%= link_to 'Deletar', {action: 'destroy', id: cliente}, {method: "delete"} %>
+      <%= link_to 'Editar', action: 'edit', id: cliente %>
+    </p>
+  </tr>
+<% end %>
