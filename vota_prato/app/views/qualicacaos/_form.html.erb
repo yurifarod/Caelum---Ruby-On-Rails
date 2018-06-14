@@ -1,37 +1,6 @@
-<%= form_with(model: qualicacao, local: true) do |form| %>
-  <% if qualicacao.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(qualicacao.errors.count, "error") %> prohibited this qualicacao from being saved:</h2>
-
-      <ul>
-      <% qualicacao.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :cliente_id %>
-    <%= form.number_field :cliente_id, id: :qualicacao_cliente_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :restaurante_id %>
-    <%= form.number_field :restaurante_id, id: :qualicacao_restaurante_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nota %>
-    <%= form.text_field :nota, id: :qualicacao_nota %>
-  </div>
-
-  <div class="field">
-    <%= form.label :valor_gasto %>
-    <%= form.text_field :valor_gasto, id: :qualicacao_valor_gasto %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%= form_for :qualicacaos, :url => {:action => 'create'} do |f| %>
+	ID do Cliente: <%= f.text_field :cliente_id %> <br/>
+	ID do Restaurante: <%= f.text_field :restaurante_id %> <br/>
+	Valor gasto: <%= f.text_field :valor_gasto %> <br/>
+	<%= submit_tag 'Criar' %>
 <% end %>

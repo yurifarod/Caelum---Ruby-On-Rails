@@ -5,6 +5,7 @@
 <% @clientes.each do |cliente| %>
   <tr>
     <h1><%= cliente.nome %> </h1>
+    <p><%= cliente.id %>, identificador</p>
     <p><%= cliente.idade %>, idade</p>
     <p>
       <%= link_to 'Detalhe', action: 'show', id: cliente%>
